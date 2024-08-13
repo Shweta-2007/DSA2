@@ -22,6 +22,8 @@ public class four {
             }
         }
 
+        System.out.println(Arrays.toString(diff));
+
         int result[] = new int[n];
         result[0] = diff[0];
         for (int i = 1; i < n; i++) {
