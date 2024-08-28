@@ -3,27 +3,27 @@ package DSA2.ADVANCE_DSA.SORTING;
 import java.util.Arrays;
 
 // find the smallest number that can be formed by rearranging the digits of the given number in an array. return the smallest number in the form of an array, 
+// Here it is given that it consists of only digits means it will only contain numbers from 0 to 9
 public class one {
     public static int[] smallestNumber(int[] digits) {
-        int length = digits.length;
-        int freqArray[] = new int[10];
-        for (int i = 0; i < length; i++) {
-            freqArray[digits[i]]++;
+        // create a frequency array
+        int fArray[] = new int[10];
+        for (int i = 0; i < digits.length; i++) {
+            fArray[digits[i]]++;
         }
 
-        System.out.println("freqArray:" + Arrays.toString(freqArray));
-
-        int result[] = new int[length];
         int index = 0;
-        for (int d = 0; d <= 9; d++) {
-            for (int i = 0; i < freqArray[d]; i++) {
-                result[index] = d;
+        // iterate on outer loop from 0 to 9
+        for (int value = 0; value <= 9; value++) {
+            // iterate on inner loop on frequency of that value
+            for (int i = 0; i < fArray[value]; i++) {
+                digits[index] = value;
                 index++;
+
             }
         }
 
-        return result;
-
+        return digits;
     }
 
     public static void main(String[] args) {
