@@ -21,9 +21,11 @@ public class eleven {
     public static void main(String[] args) {
         Integer arr[] = { 9, 3, 10, 6, 4 };
         // Sort using a custom operator
-
+        System.out.println();
         Arrays.sort(arr, new Comparator<Integer>() {
             public int compare(Integer a, Integer b) {
+                System.out.println("a " + a + " b " + b);
+                System.out.println();
                 int fa = factorsCount(a);
                 int fb = factorsCount(b);
 
